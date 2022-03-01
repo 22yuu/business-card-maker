@@ -6,6 +6,7 @@
   flex-wrap: wrap;
   border-top: 1px solid makerBlack;
   border-left: 1px solid makerBlack;
+  margin-bottom: 1em;
 }
 
 .input,
