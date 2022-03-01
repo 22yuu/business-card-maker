@@ -11,6 +11,7 @@ const Login = ({ authService }) => {
     navigate("/maker", { state: { id: userId } });
     console.log(userId);
   };
+
   const onLogin = (event) => {
     authService //
       .login(event.currentTarget.textContent)
@@ -22,6 +23,7 @@ const Login = ({ authService }) => {
       user && goToMaker(user.id);
     });
   });
+
   return (
     <section className={styles.login}>
       <Header />
