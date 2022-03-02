@@ -1,7 +1,6 @@
 import React, { useRef, useState } from "react";
 import Button from "../button/button";
 import styles from "../card_edit_form/card_edit_form.module.css";
-import ImageFileInput from "../image_file_input/image_file_input";
 
 const CardAddForm = ({ FileInput, onAdd }) => {
   const formRef = useRef();
@@ -35,7 +34,7 @@ const CardAddForm = ({ FileInput, onAdd }) => {
       fileURL: file.fileURL || "",
     };
     formRef.current.reset(); // 입력이 끝나면 리셋
-    setFile({ fileName: null, fileURL: null });
+    setFile({ fileName: null, fileURL: null }); // file 초기화
     onAdd(card);
   };
   return (
