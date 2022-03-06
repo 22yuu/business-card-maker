@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import Editor from "../editor/editor";
 import Footer from "../footer/footer";
@@ -14,9 +14,13 @@ const Maker = ({ FileInput, authService, cardRepository }) => {
   const [cards, setCards] = useState({});
   const [userId, setUserId] = useState(locationState && locationState.id);
 
-  const onLogout = () => {
+  const onLogout = useCallback(() => {
+    /*
+      디펜더시를 잘 파악해서 authService처럼 캐시된 콜백 안에서 사용하는 디펜더시가 있다면
+      그 디펜더시가 변경이 될 때 다시 사용할 수 있게 해줘야함.
+    */
     authService.logout();
-  };
+  });
 
   useEffect(() => {
     if (!userId) {
