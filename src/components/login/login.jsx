@@ -9,7 +9,7 @@ const Login = ({ authService }) => {
 
   const goToMaker = (userId) => {
     navigate("/maker", { state: { id: userId } });
-    console.log(userId);
+    // console.log(userId);
   };
 
   const onLogin = (event) => {
